@@ -1,0 +1,155 @@
+.container {
+  margin-bottom: 2rem;
+}
+
+.dropzone {
+  border: 2px dashed var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 3rem 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  background: linear-gradient(135deg, var(--surface-color) 0%, #f8fafc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.dropzone::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%236366f1' fill-opacity='0.03'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E") repeat;
+  pointer-events: none;
+}
+
+.dropzone:hover {
+  border-color: var(--accent-color);
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.dropzone.dragOver {
+  border-color: var(--primary-color);
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  border-style: solid;
+  transform: scale(1.02);
+}
+
+.dropzone.processing {
+  border-color: var(--warning-color);
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  cursor: not-allowed;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.uploadIcon {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+}
+
+.fileIcon {
+  width: 48px;
+  height: 64px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  position: relative;
+}
+
+.fileIcon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  background-color: var(--surface-color);
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+}
+
+.fileIcon::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 8px;
+  right: 8px;
+  height: 2px;
+  background-color: var(--surface-color);
+  box-shadow: 
+    0 8px 0 var(--surface-color),
+    0 16px 0 var(--surface-color),
+    0 24px 0 var(--surface-color);
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--border-color);
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.uploadText {
+  color: var(--text-primary);
+}
+
+.primaryText {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.secondaryText {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.25rem;
+}
+
+.processing .primaryText,
+.processing .secondaryText {
+  color: var(--warning-color);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .dropzone {
+    padding: 2rem 1rem;
+  }
+  
+  .uploadIcon {
+    height: 48px;
+  }
+  
+  .fileIcon {
+    width: 36px;
+    height: 48px;
+  }
+  
+  .spinner {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .primaryText {
+    font-size: 1rem;
+  }
+  
+  .secondaryText {
+    font-size: 0.8rem;
+  }
+}

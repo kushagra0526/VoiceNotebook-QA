@@ -1,0 +1,101 @@
+/* Badge Component Styles */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-weight: var(--font-medium);
+  line-height: 1;
+  border-radius: var(--radius-md);
+  transition: var(--transition-base);
+  white-space: nowrap;
+}
+
+/* Size variants */
+.sm {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-xs);
+  height: 20px;
+}
+
+.md {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--text-sm);
+  height: 24px;
+}
+
+.lg {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-base);
+  height: 32px;
+}
+
+/* Variant styles */
+.default {
+  background: var(--color-background-secondary);
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+}
+
+.primary {
+  background: var(--gradient-primary);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+.secondary {
+  background: var(--gradient-secondary);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+.success {
+  background: var(--gradient-success);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+.warning {
+  background: var(--gradient-warning);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+.danger {
+  background: var(--gradient-danger);
+  color: var(--color-text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Modifiers */
+.rounded {
+  border-radius: var(--radius-full);
+}
+
+.dot {
+  padding: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  min-width: 8px;
+}
+
+.dot.sm {
+  width: 6px;
+  height: 6px;
+  min-width: 6px;
+}
+
+.dot.lg {
+  width: 10px;
+  height: 10px;
+  min-width: 10px;
+}
+
+.dotIndicator {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: currentColor;
+}
